@@ -7,9 +7,14 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/jbpellicciapro/SIELI-CICD.git'
             }
         }
-        stage("Unit Test"){
+        stage("UNIT TEST"){
             steps{
                 sh'mvn test'
+            }
+        }
+        stage("INTERGRATION TEST"){
+            steps{
+                sh'mvn verify -DskipUnitTests'
             }
         }
     }
