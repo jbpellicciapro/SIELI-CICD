@@ -32,6 +32,14 @@ pipeline{
                 }
                 
             }
+        }
+        stage("CONTINOUS DELIVERY"){
+            steps{
+                script{
+                    sh 'cp -r /home/ubuntu/.jenkins/workspace/test/ /var/www/html/'  
+                }
+                
+            }
         }      
     }
 
